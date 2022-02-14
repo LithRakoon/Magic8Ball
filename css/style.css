@@ -1,4 +1,12 @@
 html {
     font-family: Comic Sans MS;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100px;
+}
+
+.center {
     text-align: center;
 }
