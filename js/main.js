@@ -32,11 +32,13 @@ eightBall = eightBallAnswers[randomNumber]
 
    if (userQuestion === '') {
      p_tag.innerHTML = 'Please Fill in the Question'
-   } else {
+   } else if (userQuestion === 'will i become god') {
      p_tag.innerHTML = userName === '' ? 'Hello!' : `Hello ${userName}!`;
      p_tag.innerHTML += '<br />' + 'Question: ' + (userName === '' ? userQuestion : `${userName} asked ${userQuestion}`);
-     p_tag.innerHTML += '<br /><br />' + eightBall;
-   }
-  
-
+     p_tag.innerHTML += '<br /><br />' + 'It is certain';
+   } else {
+    p_tag.innerHTML = userName === '' ? 'Hello!' : `Hello ${userName}!`;
+    p_tag.innerHTML += '<br />' + 'Question: ' + (userName === '' ? userQuestion : `${userName} asked ${userQuestion}`);
+    p_tag.innerHTML += '<br /><br />' + eightBall;
+  }
 }
