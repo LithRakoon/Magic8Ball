@@ -1,48 +1,73 @@
-let form = new FormData();
+// let form = new FormData();
 
-console.log(Data.append("text", document.getElementById("uname").value));
+// console.log(Data.append("text", document.getElementById("uname").value));
+const button = document.querySelector('#ask-question');
+let userName = 'Joe Biden';
+let userQuestion = 'Will I die';
 
-let userName = 'Joe Biden'
+window.onload = function() {
+  button.addEventListener('click', handleButtonClick);
+};
 
-userName ? console.log(`Hello ${userName}!`)
-: console.log('Hello!');
+function handleButtonClick(event)
+{
+  userName = document.querySelector('#uname').value;
+  userQuestion = document.querySelector('#question').value;
 
-const userQuestion = 'Will i die?'
 
-if (userName == '') {
-  console.log(userQuestion);
-} else {
-  console.log(`${userName} Asked ` + userQuestion);
+
+  let randomNumber = Math.floor(Math.random() * 8);
+  let eightBall = '';
+  let p_tag = document.querySelector('#result');
+
+  switch (randomNumber) {
+    case 1:
+      eightBall = 'It is certain';
+      break;
+    case 2:
+      eightBall = 'It is decidedly so';
+      break;
+    case 3:
+      eightBall = 'Reply hazy try again';
+      break;
+    case 4:
+      eightBall = 'Cannot predict now';
+      break;
+    case 5:
+      eightBall = 'Do not count on it';
+      break;
+    case 6:
+      eightBall = 'My sources say no';
+      break;
+    case 7:
+      eightBall = 'Outlook not so good';
+      break;
+    case 8:
+      eightBall = 'Signs point to yes';
+      break;
+  }
+
+  if (userQuestion === '') {
+    p_tag.innerHTML = 'Please Fill in the Question'
+  } else {
+    p_tag.innerHTML = userName === '' ? 'Hello!' : `Hello ${userName}!`;
+    p_tag.innerHTML += '<br />' + (userName === '' ? userQuestion : `${userName} asked ${userQuestion}`);
+    p_tag.innerHTML += '<br /><br />' + eightBall;
+  }
+  
+
 }
 
-let randomNumber = Math.floor(Math.random() * 8);
-let eightBall = ''
 
-switch (randomNumber) {
-  case 1:
-    eightBall = 'It is certain'
-    break;
-  case 2:
-    eightBall = 'It is decidedly so'
-    break;
-  case 3:
-    eightBall = 'Reply hazy try again'
-    break;
-  case 4:
-    eightBall = 'Cannot predict now'
-    break;
-  case 5:
-    eightBall = 'Do not count on it'
-    break;
-  case 6:
-    eightBall = 'My sources say no'
-    break;
-  case 7:
-    eightBall = 'Outlook not so good'
-    break;
-  case 8:
-    eightBall = 'Signs point to yes'
-    break;
-}
+// userName ? console.log(`Hello ${userName}!`)
+// : console.log('Hello!');
 
-console.log(eightBall);
+// if (userName == '') {
+//   console.log(userQuestion);
+// } else {
+//   console.log(`${userName} Asked ` + userQuestion);
+// }
+
+
+
+// console.log(eightBall);
